@@ -1,28 +1,28 @@
-package contentType
+package contenttype
 
 type Kind uint8
 
 const (
-	Json Kind = iota
-	Yaml
+	JSON Kind = iota
+	YAML
 )
 
 var codecText = map[Kind]string{
-	Json: "json",
-	Yaml: "yaml",
+	JSON: "json",
+	YAML: "yaml",
 }
 
 var contentTypeText = map[Kind]string{
-	Json: "application/json",
-	Yaml: "application/x-yaml",
+	JSON: "application/json",
+	YAML: "application/x-yaml",
 }
 
-func (it Kind) String() string { return codecText[it] }
+func (k Kind) String() string { return contentTypeText[k] }
 
-func (ct Kind) Codec() string {
-	return codecText[ct]
+func (k Kind) Codec() string {
+	return codecText[k]
 }
 
-func (ct Kind) ContentType() string {
-	return contentTypeText[ct]
+func (k Kind) ContentType() string {
+	return contentTypeText[k]
 }
