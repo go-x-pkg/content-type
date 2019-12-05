@@ -1,3 +1,3 @@
-module github.com/go-x-pkg/content-type
+module github.com/go-x-pkg/contenttype
 
 go 1.13
